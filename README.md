@@ -12,20 +12,7 @@ Technologies Used
 Frontend: HTML, CSS, JavaScript
 APIs: Google Maps API (for interactive maps)
 Hosting: Currently not live on a server, but can be deployed on web hosting services like GitHub Pages, Netlify, etc.
-Installation
-Prerequisites
-Web browser for testing
-Steps
-Clone the Repository:
-bash
-Copy code
-git clone https://github.com/yourusername/ghoomi-ghoomi.git
-Navigate to the Project Directory:
-bash
-Copy code
-cd ghoomi-ghoomi
-Open the Website:
-Open the index.html file in your web browser to view the website.
+
 Usage
 Home Page: The main page displays a map of India with clickable states.
 State Page: Clicking on a state redirects to a detailed map of the state with marked tourist spots.
@@ -87,7 +74,7 @@ Acknowledgements
 Google Maps API for providing the map and marker functionality.
 Open-source libraries and tools used in this project.
 Contact
-For any inquiries or feedback, please contact [your-email@example.com].
+For any inquiries or feedback, please contact garvitgauri9@gmail.com.
 
 Thank you for using Ghoomi Ghoomi! We hope it enhances your travel experience across the beautiful states of India.
 
