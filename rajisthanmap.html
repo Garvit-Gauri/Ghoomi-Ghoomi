@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rajisthan</title>
+  <style>
+    #map{
+      height:550px;
+      width:100%;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <h1>Rajisthan</h1>
+    <button onclick=" redirectToAnotherPage()">Back</button>
+  </header>
+  <script>
+    // JavaScript function to handle the redirection
+    function redirectToAnotherPage() {
+      // Replace 'target-page.html' with the actual URL of the page you want to redirect to
+      window.location.href = 'mainwebpage.html';
+    }
+  </script>
+  
+  <div id="map"></div>
+  <script>
+    function initMap(){
+      var options = {
+        zoom:7,
+        center: {lat:27.0238, lng:74.2179 }
+      }
+      var map = new
+      google.maps.Map(document.getElementById('map'), options);
+/*
+      
+      var marker = new google.maps.Marker({
+        position: {lat: 28.656473, lng: 77.242943},
+        map: map,
+        icon : 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+
+      var infowindow = new google.maps.InfoWindow({
+        content: 'This is the info window content.'
+        });
+ 
+      marker.addListener('mouseover', function () {
+      infowindow.open(map, marker);
+      });
+
+      marker.addListener('mouseout', function () {
+      infowindow.close();
+      });
+      */
+
+      var markers = [
+        {
+        coords: {lat:24.5764, lng: 73.6835},
+        content: '<h1>City Palace</h1> <p>Located in the heart of Jaipur, the City Palace is a magnificent complex that combines Rajput and Mughal architectural styles. Built by Maharaja Sawai Jai Singh II, the palace complex includes courtyards, gardens, and several buildings. The Chandra Mahal and Mubarak Mahal are notable structures within the palace. The museum in the City Palace exhibits a rich collection of royal costumes, weapons, and artifacts.</p> <a href="city palace.html">read more</a> '
+        },
+        {
+        coords: {lat: 26.9239, lng:75.8267},
+        content: '<h1>Hawa Mahal</h1><p>Hawa Mahal is an iconic structure in Jaipur, known for its distinctive honeycomb facade with 953 small windows (jharokhas). Built by Maharaja Sawai Pratap Singh in 1799, the palace allowed royal ladies to observe street festivals and daily life without being seen. The pink sandstone structure is a symbol of Jaipur"s architectural heritage.</p><a href="Hawa Mahal.html">Read More</a>'
+        },
+        {
+        coords: {lat:26.9239, lng:70.9126},
+        content: '<h1>Jaisalmer Fort</h1><p>Jaisalmer Fort is a magnificent fortification in the heart of the "Golden City" of Jaisalmer. Constructed in 1156 AD by Rawal Jaisal, the fort stands on a ridge and is made of yellow sandstone. It houses palaces, Jain temples, and havelis with intricate architecture. The fort"s unique location and golden hues make it a UNESCO World Heritage Site</p><a href="Jaisalmer Fort.html">Read More</a>'
+        },
+        {
+        coords: {lat:26.4867, lng: 74.5491},
+        content: '<h1>Brahma Temple</h1><p>The Brahma Temple in Pushkar is one of the few temples dedicated to Lord Brahma, the creator, in the world. Constructed with a red spire, the temple is located by the sacred Pushkar Lake. Pilgrims and tourists visit the temple to seek blessings, and the annual Pushkar Camel Fair attracts thousands to this holy town.</p><a href="Brahma temple.html">Read More</a>'
+        },
+        {
+        coords: {lat:26.2978, lng: 73.0180},
+        content: '<h1>mehrangarh fort</h1><p>Mehrangarh Fort, towering over the city of Jodhpur, is one of the largest forts in India. Built by Rao Jodha in the mid-15th century, the fort offers spectacular views of Jodhpur"s blue-painted houses. Inside, visitors can explore palaces, museums, and a vast collection of artifacts, providing insights into the history of Marwar.</p><a href="mehrangrah fort.html">Read More</a>'
+        },
+        {
+        coords: {lat:26.0173, lng: 76.5026},
+        content: '<h1>Rantham Bore National Park</h1><p>Ranthambore National Park, situated in Rajasthan, is renowned for its diverse wildlife, particularly the Bengal tiger. Once a hunting ground for the Maharajas of Jaipur, the park is now a wildlife sanctuary and a popular destination for wildlife enthusiasts. The park"s landscape includes lakes, forests, and historical ruins, creating a unique backdrop for wildlife safaris</p><a href="Ranthambore National Park.html">Read More</a>'
+        }
+      ];
+
+      for(var i=0;i< markers.length; i++) {
+        addMarker (markers[i]);
+        }
+      function addMarker (props){
+        var marker = new google.maps.Marker({
+        position:props.coords,
+        map: map,
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+        if(props.content){
+
+          var infowindow = new google.maps.InfoWindow({
+          content: props.content
+          });
+
+        marker.addListener('mouseover', function () {
+        infowindow.open(map, marker);
+        });
+
+       
+    }
+  }
+    }
+
+  </script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_6EMsdvTOVzdL-Lc2xRNFtx1oYc_URw&libraries=geometry,places&callback=initMap">
+  </script>
+  <a href=""></a>
+</body>
+</html>

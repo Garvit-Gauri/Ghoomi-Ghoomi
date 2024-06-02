@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Punjab</title>
+  <style>
+    #map{
+      height:550px;
+      width:100%;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <h1>punjab</h1>
+    <button onclick=" redirectToAnotherPage()">Back</button>
+  </header>
+  <script>
+    // JavaScript function to handle the redirection
+    function redirectToAnotherPage() {
+      // Replace 'target-page.html' with the actual URL of the page you want to redirect to
+      window.location.href = 'mainwebpage.html';
+    }
+  </script>
+  
+  <div id="map"></div>
+  <script>
+    function initMap(){
+      var options = {
+        zoom:7,
+        center: {lat:30.2110, lng:74.9455 }
+      }
+      var map = new
+      google.maps.Map(document.getElementById('map'), options);
+/*
+      
+      var marker = new google.maps.Marker({
+        position: {lat: 28.656473, lng: 77.242943},
+        map: map,
+        icon : 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+
+      var infowindow = new google.maps.InfoWindow({
+        content: 'This is the info window content.'
+        });
+ 
+      marker.addListener('mouseover', function () {
+      infowindow.open(map, marker);
+      });
+
+      marker.addListener('mouseout', function () {
+      infowindow.close();
+      });
+      */
+
+      var markers = [
+        {
+        coords: {lat: 31.2355, lng: 76.5013},
+        content: '<h1>Anandpur Sahib</h1> <p>Anandpur Sahib, located in Punjab, is a significant Sikh pilgrimage site known for the Takht Sri Keshgarh Sahib, one of the five temporal seats of authority in Sikhism. It holds historical importance as Guru Gobind Singh founded the Khalsa here in 1699. The town hosts colorful celebrations during festivals, especially Vaisakhi, attracting pilgrims and tourists alike.</p> <a href="Anandpur Sahib.html">read more</a> '
+        },
+        {
+        coords: {lat:  31.6200, lng:74.8765},
+        content: '<h1>Golden Temple</h1><p>The Golden Temple, or Sri Harmandir Sahib, is the holiest shrine in Sikhism, situated in Amritsar. Its breathtaking architecture, surrounded by the Amrit Sarovar (holy tank), reflects a harmonious blend of Islamic and Hindu design. The temple is a symbol of spiritual and cultural significance, welcoming people from all walks of life.</p><a href="goldentemple.html">Read More</a>'
+        },
+        {
+        coords: {lat:  31.6206, lng:74.8801},
+        content: '<h1>Jallian Wala Bagh</h1><p>Jallianwala Bagh, also in Amritsar, is a poignant historical site associated with the tragic Jallianwala Bagh massacre of 1919. The park stands as a memorial, preserving the remnants of the tragic event, including the bullet marks on the walls, commemorating the lives lost during a peaceful gathering.</p><a href="Jallianwala bagh.html">Read More</a>'
+        },
+        {
+        coords: {lat:  32.4437, lng:75.7340},
+        content: '<h1>Ranjit Sagar Dam</h1><p>Ranjit Sagar Dam, also known as the Thien Dam, is situated on the Ravi River in Pathankot. It is one of the largest earth-fill dams in India and serves as a multipurpose project for irrigation, hydropower generation, and flood control.</p><a href="ranjitSagar Dam.html">Read More</a>'
+        },
+        {
+        coords: {lat:  31.5892, lng:74.3587},
+        content: '<h1>sheesh mehal</h1><p>Sheesh Mahal, located in Patiala, is part of the Qila Mubarak complex. Built by Maharaja Narinder Singh in the 19th century, the palace is renowned for its exquisite mirror work, vibrant frescoes, and impressive architectural design, offering a glimpse into the opulence of the royal era.</p><a href="sheesh mahal.html">Read More</a>'
+        },
+        {
+        coords: {lat:  31.6104, lng:74.4388},
+        content: '<h1>Wagah Border</h1><p>Wagah Border, near Amritsar, is famous for the Wagah Border Ceremony, a daily military ceremony conducted by the Indian Border Security Force and the Pakistan Rangers. The event is marked by elaborate drills, patriotic fervor, and the lowering of the flags of both countries, making it a popular tourist attraction symbolizing the border between India and Pakistan.</p><a href="wagah border.html">Read More</a>'
+        }
+      ];
+
+      for(var i=0;i< markers.length; i++) {
+        addMarker (markers[i]);
+        }
+      function addMarker (props){
+        var marker = new google.maps.Marker({
+        position:props.coords,
+        map: map,
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+        if(props.content){
+
+          var infowindow = new google.maps.InfoWindow({
+          content: props.content
+          });
+
+        marker.addListener('mouseover', function () {
+        infowindow.open(map, marker);
+        });
+
+       
+    }
+  }
+    }
+
+  </script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_6EMsdvTOVzdL-Lc2xRNFtx1oYc_URw&libraries=geometry,places&callback=initMap">
+  </script>
+  <a href="wagah border.html"></a>
+</body>
+</html>

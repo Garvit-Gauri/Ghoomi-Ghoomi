@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DELHI</title>
+  <style>
+    #map{
+      height:550px;
+      width:100%;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <h1>DELHI</h1>
+    <button onclick=" redirectToAnotherPage()">Back</button>
+  </header>
+  <script>
+    // JavaScript function to handle the redirection
+    function redirectToAnotherPage() {
+      // Replace 'target-page.html' with the actual URL of the page you want to redirect to
+      window.location.href = 'mainwebpage.html';
+    }
+  </script>
+  
+  <div id="map"></div>
+  <script>
+    function initMap(){
+      var options = {
+        zoom:11,
+        center: {lat:28.6468, lng: 77.1898}
+      }
+      var map = new
+      google.maps.Map(document.getElementById('map'), options);
+/*
+      
+      var marker = new google.maps.Marker({
+        position: {lat: 28.656473, lng: 77.242943},
+        map: map,
+        icon : 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+
+      var infowindow = new google.maps.InfoWindow({
+        content: 'This is the info window content.'
+        });
+ 
+      marker.addListener('mouseover', function () {
+      infowindow.open(map, marker);
+      });
+
+      marker.addListener('mouseout', function () {
+      infowindow.close();
+      });
+      */
+
+      var markers = [
+        {
+        coords: {lat: 28.656473, lng: 77.242943},
+        content: '<h1>lal qila</h1> <p>The Red Fort, or Lal Qila, is a historic fortress in Old Delhi, India, constructed by the Mughal Emperor Shah Jahan in the 17th century. Built from red sandstone, the fort is a masterpiece of Mughal architecture, featuring structures like the Diwan-i-Aam, Diwan-i-Khas, and the Nahr-i-Behisht. The fort served as the main residence of Mughal emperors for centuries. Today, it is a UNESCO World Heritage Site and a symbol of Indias rich cultural heritage. The Red Fort is famous for its grandeur hosting the annual Independence Day celebration and is a popular destination for tourists seeking to explore the historical and architectural wonders of Delhi</p> <a href="lal-qila.html">read more</a> '
+        },
+        {
+        coords: {lat:  28.612894, lng:77.2295},
+        content: '<h1>India Gate</h1><p>India Gate is a monumental war memorial in New Delhi, commemorating the Indian soldiers who died in World War I. Designed by Sir Edwin Lutyens, it stands as a majestic triumphal arch made of red and yellow sandstone and granite, resembling the Arc de Triomphe. The names of the 70,000 soldiers are inscribed on its walls. The eternal flame, Amar Jawan Jyoti, was later added to honor those who sacrificed their lives in the 1971 Indo-Pak War. Illuminated in the evenings and surrounded by lush lawns, India Gate serves both as a poignant remembrance and a popular public space.</p><a href="indiagate.html">Read More</a>'
+        },
+        {
+        coords: {lat:  28.6127, lng:77.2773},
+        content: '<h1>AksharDhamm</h1><p>Akshardham Temple, located in Delhi, is a grand Hindu temple complex known for its stunning architecture and intricate carvings. Built by the Bochasanwasi Akshar Purushottam Swaminarayan Sanstha (BAPS), it showcases traditional Indian art and cultural heritage. The central monument is surrounded by beautiful gardens and water features, offering a serene and spiritual atmosphere.</p><a href="AkshardhamTemple.html">Read More</a>'
+        },
+        {
+        coords: {lat:  28.59323768073728, lng:77.25068482453655},
+        content: '<h1>Humayun"s tomb</h1><p>Humayun"s Tomb, situated in Delhi, is a UNESCO World Heritage Site and a magnificent example of Mughal architecture. Built in the mid-16th century, it is the tomb of the Mughal Emperor Humayun and features a grand garden setting, intricate lattice work, and a combination of red sandstone and white marble, influencing later Mughal architectural masterpieces, including the Taj Mahal.</p><a href="HumanyunsTomb.html">Read More</a>'
+        },
+        {
+        coords: {lat:  28.5245, lng:77.1855},
+        content: '<h1>Qutub minar</h1><p>Qutub Minar, also in Delhi, is a UNESCO World Heritage Site and an impressive medieval Islamic structure. Built in the early 13th century, it is the tallest brick minaret in the world. The complex includes various historically significant structures, showcasing the Indo-Islamic architectural style. The intricate carvings and inscriptions on the red sandstone and marble make it a remarkable historical site.</p><a href="qutubminar.html">Read More</a>'
+        }
+      ];
+
+      for(var i=0;i< markers.length; i++) {
+        addMarker (markers[i]);
+        }
+      function addMarker (props){
+        var marker = new google.maps.Marker({
+        position:props.coords,
+        map: map,
+        icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+        });
+        if(props.content){
+
+          var infowindow = new google.maps.InfoWindow({
+          content: props.content
+          });
+
+        marker.addListener('mouseover', function () {
+        infowindow.open(map, marker);
+        });
+
+       
+    }
+  }
+    }
+
+  </script>
+  <script async
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCL_6EMsdvTOVzdL-Lc2xRNFtx1oYc_URw&libraries=geometry,places&callback=initMap">
+  </script>
+  <a href=""></a>
+</body>
+</html>
